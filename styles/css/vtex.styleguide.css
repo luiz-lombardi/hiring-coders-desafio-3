@@ -1,0 +1,9 @@
+/* Cor do texto na barra de pesquisa */
+
+.input,
+.input::placeholder {
+    background-color: transparent;
+    color: #ffffff !important;
+    opacity: 1;
+    padding-left: 0;
+}

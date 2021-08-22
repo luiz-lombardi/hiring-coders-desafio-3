@@ -1,0 +1,229 @@
+{
+    "store.home": {
+        // Tab layout para alternar entre as categorias de produtos
+        // Newsletter para recebimento de ofertas
+        // Footer fixo com links de login, seções da loja e suporte
+        "blocks": ["tab-layout#home", "newsletter", "footer"]
+    },
+
+    "tab-layout#home": {
+        "children": [
+            "tab-list#home",
+            "slider-layout#images",
+            "tab-content#home"
+        ]
+    },
+    "tab-list#home": {
+        "props": {
+            "blockClass": "home",
+            "defaultActiveTabId": "home-1"
+        },
+        "children": [
+            "tab-list.item#home-1",
+            "tab-list.item#home-2",
+            "tab-list.item#home-3",
+            "tab-list.item#home-4",
+            "tab-list.item#home-5",
+            "tab-list.item#home-6",
+            "tab-list.item#home-7"
+        ]
+    },
+    "tab-list.item#home-1": {
+        "props": {
+            "tabId": "home-1",
+            "label": "Promoção",
+            "defaultActiveTab": true
+        }
+    },
+    "tab-list.item#home-2": {
+        "props": {
+            "tabId": "home-2",
+            "label": "Santos"
+        }
+    },
+    "tab-list.item#home-3": {
+        "props": {
+            "tabId": "home-3",
+            "label": "Bragantino"
+        }
+    },
+    "tab-list.item#home-4": {
+        "props": {
+            "tabId": "home-4",
+            "label": "Signos"
+        }
+    },
+    "tab-list.item#home-5": {
+        "props": {
+            "tabId": "home-5",
+            "label": "Divertidos"
+        }
+    },
+    "tab-list.item#home-6": {
+        "props": {
+            "tabId": "home-6",
+            "label": "7 Maravilhas"
+        }
+    },
+    "tab-list.item#home-7": {
+        "props": {
+            "tabId": "home-7",
+            "label": "Guerreiros"
+        }
+    },
+    "slider-layout#images": {
+        "props": {
+            "autoplay": {
+                "timeout": 7000,
+                "stopOnHover": true
+            },
+            "itemsPerPage": {
+                "desktop": 1,
+                "tablet": 1,
+                "phone": 1
+            },
+            "infinite": true,
+            "showNavigationArrows": "always",
+            "showPaginationDots": "always",
+            "blockClass": "carousel"
+        },
+        "children": ["image#wood-sport", "image#grandes-guerreiros"]
+    },
+    "image#wood-sport": {
+        "props": {
+            "src": "https://maratonavirtual.s3.sa-east-1.amazonaws.com/6iibxhv7jzzdn2749uhoxub2fdjf",
+            "maxWidth": "100%",
+            "blockClass": "banner"
+        }
+    },
+    "image#grandes-guerreiros": {
+        "props": {
+            "src": "https://maratonavirtual.s3.sa-east-1.amazonaws.com/du3k6akoks0u3xe322aypnaaal8e",
+            "maxWidth": "100%",
+            "blockClass": "banner"
+        }
+    },
+    "tab-content#home": {
+        "children": [
+            "tab-content.item#home-1",
+            "tab-content.item#home-2",
+            "tab-content.item#home-3",
+            "tab-content.item#home-4",
+            "tab-content.item#home-5",
+            "tab-content.item#home-6",
+            "tab-content.item#home-7"
+        ]
+    },
+    "tab-content.item#home-1": {
+        "children": ["search-result-layout.customQuery#home"],
+        // "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-1"
+        }
+    },
+    "tab-content.item#home-2": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-2"
+        }
+    },
+    "tab-content.item#home-3": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-3"
+        }
+    },
+    "tab-content.item#home-4": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-4"
+        }
+    },
+    "tab-content.item#home-5": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-5"
+        }
+    },
+    "tab-content.item#home-6": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-6"
+        }
+    },
+    "tab-content.item#home-7": {
+        "children": ["search-result-layout.customQuery#home"],
+        "props": {
+            "tabId": "home-7"
+        }
+    },
+
+    "search-result-layout.customQuery#home": {
+        "props": {
+            "querySchema": {
+                "skusFilter": "FIRST_AVAILABLE",
+                "simulationBehavior": "skip",
+                "maxItemsPerPage": 8
+            }
+        },
+        "blocks": [
+            "search-result-layout.desktop#home",
+            "search-result-layout.mobile#home"
+        ]
+    },
+
+    "search-result-layout.desktop#home": {
+        "children": ["search-content#desktop"],
+        "props": {
+            "preventRouteChange": true
+        }
+    },
+    "search-content#desktop": {
+        "blocks": ["gallery#desktop", "not-found"]
+    },
+    "gallery#desktop": {
+        "props": {
+            "layouts": [
+                {
+                    "name": "two",
+                    "component": "OneOrTwoLineSummary",
+                    "itemsPerRow": 2
+                }
+            ],
+            "OneOrTwoLineSummary": "product-summary.shelf",
+            "blockClass": "gallery-desktop"
+        }
+    },
+    "search-result-layout.mobile#home": {
+        "children": ["search-content#mobile"],
+        "props": {
+            "preventRouteChange": true
+        }
+    },
+    "search-content#mobile": {
+        "blocks": ["gallery#mobile", "not-found"]
+    },
+    "gallery#mobile": {
+        "props": {
+            "layouts": [
+                {
+                    "name": "whole",
+                    "component": "OneOrTwoLineSummary",
+                    "itemsPerRow": 1
+                }
+            ],
+            "OneOrTwoLineSummary": "product-summary.shelf",
+            "blockClass": "gallery-mobile"
+        }
+    },
+    "product-summary.shelf": {
+        "children": [
+            "stack-layout",
+            "product-summary-name",
+            "product-summary-image",
+            "product-summary-space",
+            "product-summary-price",
+            "product-summary-buy-button"
+        ]
+    }
+}

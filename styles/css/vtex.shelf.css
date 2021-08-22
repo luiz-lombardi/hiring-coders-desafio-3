@@ -1,0 +1,21 @@
+/* Container de produtos na homepage */
+
+.title {
+    padding-top: 0;
+}
+
+.sliderContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.slide {
+    width: 100% !important;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.arrow {
+    display: none;
+}

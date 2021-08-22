@@ -1,0 +1,23 @@
+/* Slider Layout de produtos da homepage
+ * Convertido em grid para se assemelhar ao
+ * modelo original da UpMedal
+ */
+
+.sliderFrame {
+    display: grid;
+    grid-template-columns: repeat(1, 90%);
+    justify-items: center;
+    row-gap: 1rem;
+    width: 100% !important;
+    transform: translate3d(0, 0px, 0px) !important;
+}
+
+@media (min-width: 860px) {
+    .sliderFrame {
+        grid-template-columns: repeat(2, 480px);
+    }
+}
+
+.dotsContainer {
+    display: none;
+}
